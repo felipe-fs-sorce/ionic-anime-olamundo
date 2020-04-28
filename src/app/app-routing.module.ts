@@ -29,15 +29,21 @@ const routes: Routes = [
     loadChildren: () => import('./pages/about/about.module').then( m => m.AboutPageModule)
   },
   {
-    path: 'contacts',
+    path: 'contatos',
     loadChildren: () => import('./pages/contacts/contacts.module').then( m => m.ContactsPageModule)
   },
 
+    // Rota para listagem de usuários
+  {
+    path: 'usuarios/todos',
+    loadChildren: () => import('./users/listusers/listusers.module').then( m => m.ListusersPageModule)
+  },
   // Carregar a página e404 caso a rota não exista --> Erro 404
   {
     path: '**',
     loadChildren: () => import('./pages/e404/e404.module').then( m => m.E404PageModule)
   },
+  
   
 ];
 
